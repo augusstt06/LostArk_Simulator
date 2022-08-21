@@ -1,16 +1,18 @@
 <template>
   <div class="app">
-    <nav>
+    <!-- <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </nav>
+    </nav> -->
     <router-view />
   </div>
 </template>
 
 <style>
-* {
-  /* height: 100%; */
+html,
+body,
+#app {
+  height: 100%;
   box-sizing: border-box;
 }
 #app {
@@ -19,13 +21,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-
-  /* height: 90vw; */
-
-  /* background: black; */
 }
 .app {
   background: black;

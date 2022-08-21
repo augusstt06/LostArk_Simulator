@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="Input">
     <b-input-group>
       <b-form-input
         type="text"
