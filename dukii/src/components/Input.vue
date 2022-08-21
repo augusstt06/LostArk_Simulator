@@ -8,15 +8,18 @@
         min="0.00"
       ></b-form-input>
       <b-input-group-append>
-        <b-button variant="outline-info">입력</b-button>
+        <b-button
+          variant="outline-info"
+          @click="this.$store.commit('getInputId', userId)"
+          >입력</b-button
+        >
       </b-input-group-append>
     </b-input-group>
-    <h2>{{ userId }}</h2>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "InputComponent",

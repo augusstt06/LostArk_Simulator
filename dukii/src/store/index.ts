@@ -1,14 +1,17 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
+    input: {
+      id: "ID",
+    },
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
+    getInputId: (state, input: string) => {
+      return (state.input.id = input);
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  actions: {},
+  modules: {},
+});
