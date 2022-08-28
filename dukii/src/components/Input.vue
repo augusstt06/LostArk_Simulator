@@ -8,10 +8,6 @@
         min="0.00"
       ></b-form-input>
       <b-input-group-append>
-        <!-- <b-button
-          variant="outline-info"
-          @click="this.$store.commit('getInputId', userId)"
-        > -->
         <b-button variant="outline-info">
           <!-- <router-link :to="{ name: 'detail', params: { userId } }"> -->
           <router-link :to="{ path: `/detail/${userId}` }"> 입력 </router-link>
