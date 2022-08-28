@@ -4,7 +4,6 @@
       <HeaderComponent />
       <InputComponent />
     </div>
-    <h2>파라미터 : {{ $route.params.userId }}</h2>
   </div>
 </template>
 
