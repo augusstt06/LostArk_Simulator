@@ -4,7 +4,7 @@
       <HeaderComponent />
       <InputComponent />
     </div>
-    <button @click="getData('과자')"></button>
+    <button @click="getWebsiteData">dd</button>
   </div>
 </template>
 
@@ -13,7 +13,8 @@ import { defineComponent } from "vue";
 import HeaderComponent from "../components/Header.vue";
 import InputComponent from "../components/Input.vue";
 
-import { getData } from "../module/main";
+import axios from "axios";
+// import cheerio from "cheerio";
 
 export default defineComponent({
   name: "DetailView",
@@ -21,8 +22,26 @@ export default defineComponent({
     HeaderComponent,
     InputComponent,
   },
+  data() {
+    return {
+      lastestArticles: [],
+    };
+  },
   methods: {
-    getData: getData,
+    getWebsiteData() {
+      let params = "희현잉";
+      axios
+        .get(`/Profile/Character/${params}`)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+  created() {
+    this.getWebsiteData();
   },
 });
 </script>
