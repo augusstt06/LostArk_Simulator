@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
     component: MainView,
   },
   {
-    path: "/detail/:userId",
+    path: "/detail",
     name: "detail",
 
     component: () => import("../views/DetailView.vue"),

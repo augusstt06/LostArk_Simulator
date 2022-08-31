@@ -10,7 +10,7 @@
       <b-input-group-append>
         <b-button variant="outline-info">
           <!-- <router-link :to="{ name: 'detail', params: { userId } }"> -->
-          <router-link :to="{ path: `/detail/${userId}` }"> 입력 </router-link>
+          <router-link :to="{ path: `/detail` }"> 입력 </router-link>
         </b-button>
       </b-input-group-append>
     </b-input-group>
