@@ -9,6 +9,7 @@
     </div>
     <div class="text">
       <TextComponent />
+      <button @click="Test">Test</button>
     </div>
   </div>
 </template>
@@ -19,12 +20,22 @@ import InputComponent from "@/components/Input.vue";
 import HeaderComponent from "@/components/Header.vue";
 import TextComponent from "@/components/Text.vue";
 
+import axios from "axios";
+
 export default defineComponent({
   name: "MainView",
   components: {
     InputComponent,
     HeaderComponent,
     TextComponent,
+  },
+  methods: {
+    Test() {
+      axios
+        .get("/api/test")
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    },
   },
 });
 </script>
