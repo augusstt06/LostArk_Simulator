@@ -9,7 +9,6 @@
     </div>
     <div class="text">
       <TextComponent />
-      <button @click="Test">Test</button>
     </div>
   </div>
 </template>
@@ -30,12 +29,12 @@ export default defineComponent({
     TextComponent,
   },
   methods: {
-    Test() {
-      axios
-        .get("/api/test")
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
-    },
+    // Test() {
+    //   axios
+    //     .get("/api/test")
+    //     .then((res) => console.log(res))
+    //     .catch((err) => console.log(err));
+    // },
   },
 });
 </script>

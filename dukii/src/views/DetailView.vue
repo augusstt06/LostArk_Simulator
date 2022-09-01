@@ -1,5 +1,6 @@
 <template>
   <div class="detail">
+    {{ userId }}
     <div class="head">
       <HeaderComponent />
       <InputComponent />
@@ -21,14 +22,19 @@ export default defineComponent({
     HeaderComponent,
     InputComponent,
   },
-  data() {
-    return {};
-  },
 
+  data() {
+    return {
+      userId: this.$route.query.id,
+    };
+  },
   methods: {},
-  // created() {
-  //   this.Test();
-  // },
+  watch: {
+    $route(newValue, oldValue) {
+      console.log(newValue.query.id, oldValue.query.id);
+      this.$router.go(0);
+    },
+  },
 });
 </script>
 <style scoped>

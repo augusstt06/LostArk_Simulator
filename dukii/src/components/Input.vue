@@ -8,10 +8,10 @@
         min="0.00"
       ></b-form-input>
       <b-input-group-append>
-        <b-button variant="outline-info">
-          <!-- <router-link :to="{ name: 'detail', params: { userId } }"> -->
-          <router-link :to="{ path: `/detail` }"> 입력 </router-link>
+        <b-button variant="outline-info" v-if="userId" @click="goDetailPage">
+          입력
         </b-button>
+        <b-button variant="outline-info" v-else> 입력 </b-button>
       </b-input-group-append>
     </b-input-group>
   </div>
@@ -26,6 +26,15 @@ export default defineComponent({
     return {
       userId: "" as string,
     };
+  },
+  methods: {
+    goDetailPage() {
+      this.$router.push({
+        path: "/detail",
+        name: "detail",
+        query: { id: this.userId },
+      });
+    },
   },
 });
 </script>
