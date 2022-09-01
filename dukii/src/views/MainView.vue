@@ -3,6 +3,7 @@
     <div class="head">
       <HeaderComponent />
       <div class="explanation">로스트 아크 데미지 시뮬레이터</div>
+      <button @click="Test">Connecting Test</button>
     </div>
     <div class="input">
       <InputComponent />
@@ -29,12 +30,12 @@ export default defineComponent({
     TextComponent,
   },
   methods: {
-    // Test() {
-    //   axios
-    //     .get("/api/test")
-    //     .then((res) => console.log(res))
-    //     .catch((err) => console.log(err));
-    // },
+    Test() {
+      axios
+        .get("/api/detail")
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    },
   },
 });
 </script>
