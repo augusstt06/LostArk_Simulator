@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+// Client에서 Requsest를 요청하는 url
 app.use("/", indexRouter);
 app.use("/api/detail", detailRouter);
 
