@@ -1,9 +1,9 @@
 <template>
   <div class="detail">
-    {{ userId }}
     <div class="head">
       <HeaderComponent />
       <InputComponent />
+      <!-- <button @click="ConnectTest">Connecting Test</button> -->
     </div>
   </div>
 </template>
@@ -13,8 +13,6 @@ import { defineComponent } from "vue";
 import HeaderComponent from "../components/Header.vue";
 import InputComponent from "../components/Input.vue";
 import axios from "axios";
-
-// import cheerio from "cheerio";
 
 export default defineComponent({
   name: "DetailView",
@@ -28,12 +26,25 @@ export default defineComponent({
       userId: this.$route.query.id,
     };
   },
-  methods: {},
+  methods: {
+    // async ConnectTest() {
+    //   await axios
+    //     .get(`/api/detail?id=${this.userId}`)
+    //     .then((res) => console.log(res))
+    //     .catch((err) => console.log(err));
+    // },
+  },
   watch: {
     $route(newValue, oldValue) {
       console.log(newValue.query.id, oldValue.query.id);
       this.$router.go(0);
     },
+  },
+  created() {
+    axios
+      .get(`/api/detail?id=${this.userId}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   },
 });
 </script>

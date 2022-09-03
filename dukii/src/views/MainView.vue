@@ -3,7 +3,6 @@
     <div class="head">
       <HeaderComponent />
       <div class="explanation">로스트 아크 데미지 시뮬레이터</div>
-      <button @click="Test">Connecting Test</button>
     </div>
     <div class="input">
       <InputComponent />
@@ -20,8 +19,6 @@ import InputComponent from "@/components/Input.vue";
 import HeaderComponent from "@/components/Header.vue";
 import TextComponent from "@/components/Text.vue";
 
-import axios from "axios";
-
 export default defineComponent({
   name: "MainView",
   components: {
@@ -30,12 +27,12 @@ export default defineComponent({
     TextComponent,
   },
   methods: {
-    Test() {
-      axios
-        .get("/api/detail")
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
-    },
+    // Test() {
+    //   axios
+    //     .get("/api/detail")
+    //     .then((res) => console.log(res.data))
+    //     .catch((err) => console.log(err));
+    // },
   },
 });
 </script>
