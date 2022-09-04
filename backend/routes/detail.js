@@ -11,18 +11,28 @@ let characterInfo = {};
 router.get("/", (req, res, next) => {
   let id = req.query.id;
   craw_expedition.getExpeditionServer(url, id).then((data) => {
-    return (characterInfo["Expedition"] = data), next();
+    return (
+      (characterInfo["Expedition"] = data),
+      console.log("Expedition Response Success"),
+      next()
+    );
   });
 });
 router.get("/", (req, res, next) => {
   let id = req.query.id;
   craw_level.getLevel(url, id).then((data) => {
-    return (characterInfo["Level"] = data), next();
+    return (
+      (characterInfo["Level"] = data),
+      console.log("Level Response Success"),
+      next()
+    );
   });
 });
 
 router.get("/", (req, res, next) => {
+  console.log("Sending to Client...");
   res.send(characterInfo);
+  console.log("Response Success!");
 });
 
 module.exports = router;

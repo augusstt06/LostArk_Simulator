@@ -13,7 +13,6 @@ exports.getExpeditionServer = async (url, id) => {
         `#expand-character-list > ul:nth-child(${i}) > li`
       ).length;
       let singleServer = [];
-      console.log(char_num, "서버 캐릭갯수");
       for (j = 1; j <= char_num; j++) {
         if (
           id !==
@@ -25,12 +24,6 @@ exports.getExpeditionServer = async (url, id) => {
             $(
               `#expand-character-list > ul:nth-child(${i}) > li:nth-child(${j}) > span > button > span`
             ).text()
-          );
-          console.log(
-            $(
-              `#expand-character-list > ul:nth-child(${i}) > li:nth-child(${j}) > span > button > span`
-            ).text(),
-            "더하는거"
           );
         } else continue;
       }
