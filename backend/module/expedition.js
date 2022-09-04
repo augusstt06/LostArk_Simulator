@@ -1,6 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
+// 다른 서버캐릭터 확인해서 보여주기
 exports.getExpedition = async (url, id) => {
   try {
     let expeditionArr = [];
