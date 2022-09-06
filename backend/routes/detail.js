@@ -1,37 +1,35 @@
 var express = require("express");
 var router = express.Router();
+var req = express.request;
+
+require("dotenv").config();
 
 var craw_expedition = require("../module/expedition");
 var craw_level = require("../module/level");
+var craw_eqip = require("../module/equipment");
 
-const url = "https://lostark.game.onstove.com/Profile/Character/";
+const url = process.env.CRAW_URL;
 
-let characterInfo = {};
+const getData = async (url, id) => {
+  try {
+    const characterInfo = {};
 
-router.get("/", (req, res, next) => {
-  let id = req.query.id;
-  craw_expedition.getExpeditionServer(url, id).then((data) => {
-    return (
-      (characterInfo["Expedition"] = data),
-      console.log("Expedition Response Success"),
-      next()
-    );
-  });
-});
-router.get("/", (req, res, next) => {
-  let id = req.query.id;
-  craw_level.getLevel(url, id).then((data) => {
-    return (
-      (characterInfo["Level"] = data),
-      console.log("Level Response Success"),
-      next()
-    );
-  });
-});
+    const level = await craw_level.getLevel(url, id);
+    const expedition = await craw_expedition.getExpeditionServer(url, id);
 
-router.get("/", (req, res, next) => {
-  console.log("Sending to Client...");
-  res.send(characterInfo);
+    characterInfo["Level"] = level;
+    characterInfo["Expedition"] = expedition;
+
+    return characterInfo;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+router.get("/", async (req, res, next) => {
+  console.log("Responsing to Client...");
+  const userData = await getData(url, req.query.id);
+  res.send(userData);
   console.log("Response Success!");
 });
 
