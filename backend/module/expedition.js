@@ -1,34 +1,36 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
+require("dotenv").config();
+
 exports.getExpeditionServer = async (url, id) => {
   try {
-    let expedition_server = {};
+    const expedition_server = {};
     const res = await axios.get(encodeURI(url + `${id}`));
     const $ = cheerio.load(res.data);
-    const expedition_server_num = $(`#expand-character-list > strong`).length;
+    const server_expedition_num = $(process.env.CRAW_SERVER_EXPEDITION).length;
 
-    for (i = 3; i <= expedition_server_num * 2 + 1; i += 2) {
-      const char_num = $(
-        `#expand-character-list > ul:nth-child(${i}) > li`
+    for (i = 3; i <= server_expedition_num * 2 + 1; i += 2) {
+      const server_char_num = $(
+        `${process.env.CRAW_SERVER_CHAR}(${i}) > li`
       ).length;
-      let singleServer = [];
-      for (j = 1; j <= char_num; j++) {
+      const singleServer = [];
+      for (j = 1; j <= server_char_num; j++) {
         if (
           id !==
           $(
-            `#expand-character-list > ul:nth-child(${i}) > li:nth-child(${j}) > span > button > span`
+            `${process.env.CRAW_SERVER_CHAR}(${i}) > li:nth-child(${j}) > span > button > span`
           ).text()
         ) {
           singleServer.push(
             $(
-              `#expand-character-list > ul:nth-child(${i}) > li:nth-child(${j}) > span > button > span`
+              `${process.env.CRAW_SERVER_CHAR}(${i}) > li:nth-child(${j}) > span > button > span`
             ).text()
           );
         } else continue;
       }
       expedition_server[
-        $(`#expand-character-list > strong:nth-child(${i - 1})`)
+        $(`${process.env.CRAW_SERVER_EXPEDITION}:nth-child(${i - 1})`)
           .text()
           .slice(1)
       ] = singleServer;
