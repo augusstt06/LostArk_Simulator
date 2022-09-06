@@ -27,10 +27,15 @@ const getData = async (url, id) => {
 };
 
 router.get("/", async (req, res, next) => {
-  console.log("Responsing to Client...");
-  const userData = await getData(url, req.query.id);
-  res.send(userData);
-  console.log("Response Success!");
+  try {
+    console.log("Responsing to Client...");
+    const userData = await getData(url, req.query.id);
+    res.send(userData);
+    console.log("Response Success!");
+  } catch (err) {
+    console.log(err);
+    res.send("Response Error!");
+  }
 });
 
 module.exports = router;
