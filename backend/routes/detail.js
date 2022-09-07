@@ -16,9 +16,11 @@ const getData = async (url, id) => {
 
     const level = await craw_level.getLevel(url, id);
     const expedition = await craw_expedition.getExpeditionServer(url, id);
+    const eqip = await craw_eqip.getEquip(url, id);
 
     characterInfo["Level"] = level;
     characterInfo["Expedition"] = expedition;
+    characterInfo["Eqipment"] = eqip;
 
     return characterInfo;
   } catch (err) {
