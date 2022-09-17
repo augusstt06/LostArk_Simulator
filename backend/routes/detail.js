@@ -6,7 +6,8 @@ require("dotenv").config();
 
 var craw_expedition = require("../module/expedition");
 var craw_level = require("../module/level");
-var craw_basic = require("../module/stat/basicStat");
+var craw_basic_Stat = require("../module/stat/basicStat");
+var craw_battle_Stat = require("../module/stat/battleStat");
 // var craw_eqip = require("../module/equipment");
 
 const url = process.env.CRAW_URL;
@@ -17,12 +18,14 @@ const getData = async (url, id) => {
 
     const level = await craw_level.getLevel(url, id);
     const expedition = await craw_expedition.getExpeditionServer(url, id);
-    const basic_stat = await craw_basic.getBasicStat(url, id);
+    const basic_Stat = await craw_basic_Stat.getBasicStat(url, id);
+    const battle_Stat = await craw_battle_Stat.getBattleStat(url, id);
     // const eqip = await craw_eqip.getEquip(url, id);
 
     characterInfo["Level"] = level;
     characterInfo["Expedition"] = expedition;
-    characterInfo["Stat"] = basic_stat;
+    characterInfo["Basic_Stat"] = basic_Stat;
+    characterInfo["Battle_Stat"] = battle_Stat;
     // characterInfo["Eqipment"] = eqip;
 
     return characterInfo;

@@ -11,7 +11,7 @@ exports.getBasicStat = async (url, id) => {
 
     const offense_power = $(process.env.CRAW_BASIC_STAT).text();
 
-    basic_Stat["Offense_Power"] = offense_power;
+    basic_Stat["공격력"] = offense_power;
 
     return basic_Stat;
   } catch (err) {
