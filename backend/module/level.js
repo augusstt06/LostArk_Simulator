@@ -13,9 +13,9 @@ exports.getLevel = async (url, id) => {
     const battelLevel = $(process.env.CRAW_BATTLE_LEVEL).text();
     const expeditionLevel = $(process.env.CRAW_EXPEDITION_LEVEL).text();
 
-    level["Item_Level"] = itemlevel;
-    level["Battle_Level"] = battelLevel;
-    level["Expedition_Level"] = expeditionLevel;
+    level["아이템 레벨"] = itemlevel;
+    level["전투 레벨"] = battelLevel;
+    level["원정대 레벨"] = expeditionLevel;
 
     return level;
   } catch (err) {
