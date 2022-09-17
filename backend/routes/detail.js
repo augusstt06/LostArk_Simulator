@@ -7,6 +7,7 @@ var craw_expedition = require("../module/expedition");
 var craw_level = require("../module/level");
 var craw_basic_Stat = require("../module/stat/basicStat");
 var craw_battle_Stat = require("../module/stat/battleStat");
+var craw_engrave = require("../module/engrave");
 
 const url = process.env.CRAW_URL;
 
@@ -18,11 +19,13 @@ const getData = async (url, id) => {
     const expedition = await craw_expedition.getExpeditionServer(url, id);
     const basic_Stat = await craw_basic_Stat.getBasicStat(url, id);
     const battle_Stat = await craw_battle_Stat.getBattleStat(url, id);
+    const engrave = await craw_engrave.getEngraveStat(url, id);
 
     characterInfo["Level"] = level;
     characterInfo["Expedition"] = expedition;
     characterInfo["Basic_Stat"] = basic_Stat;
     characterInfo["Battle_Stat"] = battle_Stat;
+    characterInfo["Engrave"] = engrave;
 
     return characterInfo;
   } catch (err) {
