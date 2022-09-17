@@ -4,7 +4,7 @@ const puppeteer = require("puppeteer");
 
 require("dotenv").config();
 
-exports.getEngraveStat = async (url, id) => {
+exports.getEngrave = async (url, id) => {
   try {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
