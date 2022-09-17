@@ -19,7 +19,7 @@ const getData = async (url, id) => {
     const expedition = await craw_expedition.getExpeditionServer(url, id);
     const basic_Stat = await craw_basic_Stat.getBasicStat(url, id);
     const battle_Stat = await craw_battle_Stat.getBattleStat(url, id);
-    const engrave = await craw_engrave.getEngraveStat(url, id);
+    const engrave = await craw_engrave.getEngrave(url, id);
 
     characterInfo["Level"] = level;
     characterInfo["Expedition"] = expedition;
