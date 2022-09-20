@@ -12,7 +12,6 @@ exports.getCard = async (url, id) => {
     for (i = 1; i <= card_effect_num; i++) {
       const test = $(
         `${process.env.CRAW_CARD_PREV}(${i}) > ${process.env.CRAW_CARD_AFTER}`
-        // `#cardSetList > li:nth-child(${i}) > div.card-effect__title`
       ).text();
 
       let card_name;
