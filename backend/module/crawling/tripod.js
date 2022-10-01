@@ -13,6 +13,7 @@ exports.getTripod = async (url, id) => {
       const skillName = $(
         `${process.env.CRAW_SKILL_NAME_PREV}(${i})${process.env.CRAW_SKILL_NAME_AFTER}`
       ).text();
+
       console.log(test, "트포");
     }
 
