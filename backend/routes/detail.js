@@ -3,13 +3,16 @@ var router = express.Router();
 
 require("dotenv").config();
 
-var craw_expedition = require("../module/expedition");
-var craw_level = require("../module/level");
-var craw_basic_Stat = require("../module/stat/basicStat");
-var craw_battle_Stat = require("../module/stat/battleStat");
-var craw_engrave = require("../module/engrave");
-var craw_jewel = require("../module/jewel");
-var craw_card = require("../module/card");
+var craw_expedition = require("../module/crawling/expedition");
+var craw_level = require("../module/crawling/level");
+var craw_basic_Stat = require("../module/crawling/stat/basicStat");
+var craw_battle_Stat = require("../module/crawling/stat/battleStat");
+var craw_engrave = require("../module/crawling/engrave");
+var craw_jewel = require("../module/crawling/jewel");
+var craw_card = require("../module/crawling/card");
+var craw_tripod = require("../module/crawling/tripod");
+
+var calculate = require("../module/calculate/index");
 
 const url = process.env.CRAW_URL;
 
@@ -24,6 +27,7 @@ const getData = async (url, id) => {
     const engrave = await craw_engrave.getEngrave(url, id);
     const jewel = await craw_jewel.getJewel(url, id);
     const card = await craw_card.getCard(url, id);
+    const tripod = await craw_tripod.getTripod(url, id);
 
     characterInfo["Level"] = level;
     characterInfo["Expedition"] = expedition;
@@ -44,6 +48,7 @@ router.get("/", async (req, res, next) => {
     console.log("Responsing to Client...");
     const userData = await getData(url, req.query.id);
     res.send(userData);
+    // console.log(userData);
     console.log("Response Success!");
   } catch (err) {
     console.log(err);
