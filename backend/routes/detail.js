@@ -48,7 +48,6 @@ router.get("/", async (req, res, next) => {
     console.log("Responsing to Client...");
     const userData = await getData(url, req.query.id);
     res.send(userData);
-    // console.log(userData);
     console.log("Response Success!");
   } catch (err) {
     console.log(err);
