@@ -36,6 +36,7 @@ const getData = async (url, id) => {
     characterInfo["Engrave"] = engrave;
     characterInfo["Jewel"] = jewel;
     characterInfo["Card"] = card;
+    characterInfo["Tripod"] = tripod;
 
     return characterInfo;
   } catch (err) {
