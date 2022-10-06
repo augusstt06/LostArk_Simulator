@@ -44,6 +44,7 @@ exports.getTripod = async (url, id) => {
           tripod[skillName][skillTripod_Name] = skillTripod_Level;
         }
       }
+      browser.close();
     };
     for (i = 1; i <= 8; i++) {
       await clickSkill(i);
