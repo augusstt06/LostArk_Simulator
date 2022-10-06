@@ -36,6 +36,7 @@ exports.getJewel = async (url, id) => {
       }
     }
 
+    console.log("Success Crawling Jewel!");
     return jewel;
   } catch (err) {
     console.log(err);

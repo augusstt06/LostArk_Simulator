@@ -13,6 +13,7 @@ exports.getBasicStat = async (url, id) => {
 
     basic_Stat["공격력"] = offense_power;
 
+    console.log("Success Crawling Basic Stat!");
     return basic_Stat;
   } catch (err) {
     console.log(err);

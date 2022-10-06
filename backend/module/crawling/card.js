@@ -41,6 +41,7 @@ exports.getCard = async (url, id) => {
       }
     }
 
+    console.log("Success Crawling Card!");
     return card;
   } catch (err) {
     console.log(err);

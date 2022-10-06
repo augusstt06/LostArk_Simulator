@@ -20,6 +20,7 @@ exports.getBattleStat = async (url, id) => {
       battle_Stat[battleStat_name] = battleStat_num;
     }
 
+    console.log("Success Crawling Battle Stat!");
     return battle_Stat;
   } catch (err) {
     console.log(err);

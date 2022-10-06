@@ -17,6 +17,7 @@ exports.getLevel = async (url, id) => {
     level["전투 레벨"] = battelLevel;
     level["원정대 레벨"] = expeditionLevel;
 
+    console.log("Success Crawling Level!");
     return level;
   } catch (err) {
     console.log(err);

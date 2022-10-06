@@ -44,6 +44,8 @@ exports.getEngrave = async (url, id) => {
       }
     }
     browser.close();
+
+    console.log("Success Crawling Engrave!");
     return engrave;
   } catch (err) {
     console.log(err);

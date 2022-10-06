@@ -35,6 +35,8 @@ exports.getExpeditionServer = async (url, id) => {
           .slice(1)
       ] = singleServer;
     }
+
+    console.log("Success Crawling Expedition!");
     return expedition_server;
   } catch (err) {
     console.log(err);
