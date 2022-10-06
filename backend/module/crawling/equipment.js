@@ -22,6 +22,7 @@ exports.getEquip = async (url, id) => {
 
     eqip.push(eqipLevel);
 
+    browser.close();
     // return eqip;
   } catch (err) {
     console.log(err);

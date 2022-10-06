@@ -43,6 +43,7 @@ exports.getEngrave = async (url, id) => {
         }
       }
     }
+    browser.close();
     return engrave;
   } catch (err) {
     console.log(err);
