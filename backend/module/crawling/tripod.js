@@ -10,9 +10,7 @@ exports.getTripod = async (url, id) => {
 
     const res = await axios.get(encodeURI(url + `${id}`));
     const $ = cheerio.load(res.data);
-    const skill_num = $(
-      `#profile-skill > div.profile-skill-battle > div.profile-skill__list > div`
-    ).length;
+    const skill_num = $(`${process.env.CRAW_SKILL_NUM}`).length;
 
     process.setMaxListeners(skill_num);
 
