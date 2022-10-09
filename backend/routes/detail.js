@@ -3,6 +3,7 @@ var router = express.Router();
 
 require("dotenv").config();
 
+var craw_class = require("../module/crawling/class");
 var craw_expedition = require("../module/crawling/expedition");
 var craw_level = require("../module/crawling/level");
 var craw_basic_Stat = require("../module/crawling/stat/basicStat");
@@ -20,6 +21,7 @@ const getData = async (url, id) => {
   try {
     const characterInfo = {};
 
+    const character_Class = await craw_class.getClass(url, id);
     const level = await craw_level.getLevel(url, id);
     const expedition = await craw_expedition.getExpeditionServer(url, id);
     const basic_Stat = await craw_basic_Stat.getBasicStat(url, id);
@@ -29,6 +31,7 @@ const getData = async (url, id) => {
     const card = await craw_card.getCard(url, id);
     const tripod = await craw_tripod.getTripod(url, id);
 
+    characterInfo["Class"] = character_Class;
     characterInfo["Level"] = level;
     characterInfo["Expedition"] = expedition;
     characterInfo["Basic_Stat"] = basic_Stat;
