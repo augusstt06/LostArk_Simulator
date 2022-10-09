@@ -3,6 +3,8 @@ const puppeteer = require("puppeteer");
 
 require("dotenv").config();
 
+process.setMaxListeners(21);
+
 exports.getTripod = async (url, id) => {
   try {
     const tripod = {};
@@ -25,31 +27,36 @@ exports.getTripod = async (url, id) => {
       const $ = cheerio.load(content, { decodeEntities: true });
 
       const skillName = $(`${process.env.CRAW_SKILL_NAME}`).text();
+      const skillLevel = $(`${process.env.CRAW_SKILL_LEVEL}`).text();
 
-      tripod[skillName] = {};
+      if (skillLevel !== "1") {
+        tripod[skillName] = {};
 
-      for (j = 1; j <= 3; j++) {
-        const skillTripod_Name = $(
-          `${process.env.CRAW_SKILL_TRIPOD_PREV}(${j + 1}) > ${
-            process.env.CRAW_SKILL_TRIPOD_AFTER
-          } > span > font`
-        ).text();
+        for (j = 1; j <= 3; j++) {
+          const skillTripod_Name = $(
+            `${process.env.CRAW_SKILL_TRIPOD_PREV}(${j + 1}) > ${
+              process.env.CRAW_SKILL_TRIPOD_AFTER
+            } > span > font`
+          ).text();
 
-        const skillTripod_Level = $(
-          `${process.env.CRAW_SKILL_TRIPOD_PREV}(${j + 1}) > ${
-            process.env.CRAW_SKILL_TRIPOD_AFTER
-          } > span > div`
-        ).text();
-        if (skillTripod_Name.length !== 0) {
-          tripod[skillName][skillTripod_Name] = skillTripod_Level;
+          const skillTripod_Level = $(
+            `${process.env.CRAW_SKILL_TRIPOD_PREV}(${j + 1}) > ${
+              process.env.CRAW_SKILL_TRIPOD_AFTER
+            } > span > div`
+          ).text();
+          if (skillTripod_Name.length !== 0) {
+            tripod[skillName][skillTripod_Name] = skillTripod_Level;
+          }
         }
+
+        browser.close();
       }
-      browser.close();
     };
-    for (i = 1; i <= 8; i++) {
+    for (i = 1; i <= 21; i++) {
       await clickSkill(i);
     }
     console.log("Success Crawling Tripod!");
+
     return tripod;
   } catch (err) {
     console.log(err);
