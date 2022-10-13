@@ -1,6 +1,7 @@
 {
   "더블 슬래쉬": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "강화된 일격": {
@@ -30,6 +31,7 @@
   },
   "어설트 블레이드": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "날렵한 움직임": null,
@@ -53,6 +55,7 @@
   },
   "크라임 해저드": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "근육 경련": null,
@@ -82,6 +85,7 @@
   },
   "피니쉬 스트라이크": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "강인함": null,
@@ -109,6 +113,7 @@
   },
   "숄더 차지": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "보호막 효과": null,
@@ -134,6 +139,7 @@
   },
   "휠윈드": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "가벼운 발걸음": null,
@@ -163,6 +169,7 @@
   },
   "파워 브레이크": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "예리한 일격": null,
@@ -196,6 +203,7 @@
   },
   "템페스트 슬래쉬": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "집중": null,
@@ -223,6 +231,7 @@
   },
   "마운틴 크래쉬": {
     "type": "head",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "빠른 준비": null,
@@ -248,6 +257,7 @@
   },
   "다이빙 슬래쉬": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "탁월한 기동성": null,
@@ -269,6 +279,7 @@
   },
   "헬 블레이드": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "수련의 성과": null,
@@ -296,6 +307,7 @@
   },
   "체인 소드": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "급소 타격": null,
@@ -321,6 +333,7 @@
   },
   "윈드 블레이드": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "가속": null,
@@ -346,6 +359,7 @@
   },
   "메일 스톰": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "날렵한 움직임": null,
@@ -371,6 +385,7 @@
   },
   "스트라이크 웨이브": {
     "type": "none",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "파동": {
@@ -400,6 +415,7 @@
   },
   "레드 더스트": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "피해 증폭": {
@@ -425,6 +441,7 @@
   },
   "소드 스톰": {
     "type": "back",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "날렵한 움직임": null,
@@ -452,6 +469,7 @@
   },
   "오러 블레이드": {
     "type": "none",
+    "category": "일반",
     "tripod": {
       "tier1": {
         "섬전": null,
