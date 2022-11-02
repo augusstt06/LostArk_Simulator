@@ -1,9 +1,9 @@
 var berserkerData = require("./berserker/skill.json");
 var warlordData = require("./warlord/skill.json");
+
+// 매개변수로 넘어온 데이터를 기반으로 클래스 skill.json으로 계산
 exports.getBerserker = (data) => {
-  console.log(
-    berserkerData["피니쉬 스트라이크"]["tripod"]["tier1"]["강화된 일격"]
-  );
+  console.log(data["Expedition"]);
   return;
 };
 exports.getDestryoter = (data) => {
