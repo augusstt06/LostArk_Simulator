@@ -1,4 +1,5 @@
-var berserkerData = require("../berserker/skill.json");
+var berserkerData = require("./berserker/skill.json");
+var warlordData = require("./warlord/skill.json");
 exports.getBerserker = (data) => {
   console.log(
     berserkerData["피니쉬 스트라이크"]["tripod"]["tier1"]["강화된 일격"]
