@@ -20,7 +20,7 @@ exports.getCrawlingData = async (url, id) => {
     const engrave = await craw_engrave.getEngrave(url, id);
     const jewel = await craw_jewel.getJewel(url, id);
     const card = await craw_card.getCard(url, id);
-    const tripod = await craw_tripod.getTripod(url, id);
+    // const tripod = await craw_tripod.getTripod(url, id);
 
     characterInfo["Class"] = character_Class;
     characterInfo["Level"] = level;
@@ -30,7 +30,7 @@ exports.getCrawlingData = async (url, id) => {
     characterInfo["Engrave"] = engrave;
     characterInfo["Jewel"] = jewel;
     characterInfo["Card"] = card;
-    characterInfo["Tripod"] = tripod;
+    // characterInfo["Tripod"] = tripod;
 
     return characterInfo;
   } catch (err) {

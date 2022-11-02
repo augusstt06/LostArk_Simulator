@@ -1,15 +1,13 @@
-class Berserker {
-  constructor(data) {
-    this.basicStat = data.basicStat;
-    this.battleStat = data.battleStat;
-    this.card = data.card;
-    this.engrave = data.engrave;
-    this.jewel = data.jewel;
-    this.tripod = data.tripod;
-  }
-  calaulateDmg() {
-    return;
-  }
-}
-
-module.exports.Berserker;
+var berserkerData = require("../berserker/skill.json");
+exports.getBerserker = (data) => {
+  console.log(
+    berserkerData["피니쉬 스트라이크"]["tripod"]["tier1"]["강화된 일격"]
+  );
+  return;
+};
+exports.getDestryoter = (data) => {
+  return;
+};
+exports.getWarlord = (data) => {
+  return;
+};

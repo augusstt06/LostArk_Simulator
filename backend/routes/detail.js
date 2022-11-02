@@ -5,13 +5,15 @@ require("dotenv").config();
 
 var crawlingData = require("../module/index");
 var calculate = require("../module/calculate/index");
-
+var berserker = require("../classData/class/warrior/berserker");
 const url = process.env.CRAW_URL;
 
 const getData = async (url, id) => {
   try {
     const data = await crawlingData.getCrawlingData(url, id);
-
+    const test = berserker.getBerserker(data);
+    await test;
+    console.log(test);
     return data;
   } catch (err) {
     console.log(err);
