@@ -7,6 +7,7 @@ var crawlingData = require("../module/index");
 
 // 직업별 계산 모듈 호출
 // 계산모듈을 꼭 직업별로 만들어야 하는가? => 아덴 영향 생각하기
+// 따로 만드는게 맞는거 같다,
 
 var warrior = require("../classData/class/warrior/index");
 
