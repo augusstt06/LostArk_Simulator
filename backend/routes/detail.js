@@ -27,7 +27,8 @@ const divideClass = (data) => {
       const warlord = warrior.getWarlord(data);
       return warlord;
     case "블레이드":
-      console.log(data["Jewel"]);
+      const test = warrior.getBerserker(data);
+      console.log(test);
       return;
     default:
       break;
