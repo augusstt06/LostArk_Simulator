@@ -33,12 +33,6 @@ exports.getBerserker = (data) => {
         default:
           continue;
       }
-
-      // console.log(test);
-      // 트포이름
-      // console.log(each_tripod);
-      // 트포레벨
-      // console.log(tripod[skill][each_tripod]);
     }
   }
   return atk_stat;
