@@ -1,13 +1,11 @@
 var berserkerData = require("./berserker/skill.json");
 var warlordData = require("./warlord/skill.json");
-console.log(berserkerData["피니쉬 스트라이크"]["tripod"]);
-// 매개변수로 넘어온 데이터를 기반으로 클래스 skill.json으로 계산
+
 // 아덴계산도 같이
 exports.getBerserker = (data) => {
   const atk_stat = data["Basic_Stat"]["공격력"];
   const tripod = data["Tripod"];
   for (skill in tripod) {
-    console.log(skill, "??");
     let i = 1;
     console.log(tripod[skill]);
     for (each_tripod in tripod[skill]) {
@@ -17,19 +15,19 @@ exports.getBerserker = (data) => {
           console.log(i);
           console.log(tier1, "1티어");
           i++;
-          return;
+          continue;
         case 2:
           const tier2 = berserkerData[skill]["tripod"]["tier2"];
           console.log(i);
           console.log(tier2);
           i++;
-          return;
+          continue;
         case 3:
           const tier3 = berserkerData[skill]["tripod"]["tier3"];
           console.log(i);
           console.log(tier3);
           i++;
-          return;
+          continue;
         default:
           continue;
       }
