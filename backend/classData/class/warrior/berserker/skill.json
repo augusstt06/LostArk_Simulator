@@ -1,6 +1,7 @@
 {
   "더블 슬래쉬": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -31,6 +32,7 @@
   },
   "어설트 블레이드": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -55,6 +57,7 @@
   },
   "크라임 해저드": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -85,6 +88,7 @@
   },
   "피니쉬 스트라이크": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -113,6 +117,7 @@
   },
   "숄더 차지": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -139,6 +144,7 @@
   },
   "휠윈드": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -169,6 +175,7 @@
   },
   "파워 브레이크": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -203,6 +210,7 @@
   },
   "템페스트 슬래쉬": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -231,6 +239,7 @@
   },
   "마운틴 크래쉬": {
     "type": "head",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -257,6 +266,7 @@
   },
   "다이빙 슬래쉬": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -279,6 +289,7 @@
   },
   "헬 블레이드": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -307,6 +318,7 @@
   },
   "체인 소드": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -333,6 +345,7 @@
   },
   "윈드 블레이드": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -359,6 +372,7 @@
   },
   "메일 스톰": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -385,6 +399,7 @@
   },
   "스트라이크 웨이브": {
     "type": "none",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -415,6 +430,7 @@
   },
   "레드 더스트": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -441,6 +457,7 @@
   },
   "소드 스톰": {
     "type": "back",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
@@ -469,6 +486,7 @@
   },
   "오러 블레이드": {
     "type": "none",
+    "coef": 1,
     "category": "일반",
     "tripod": {
       "tier1": {
