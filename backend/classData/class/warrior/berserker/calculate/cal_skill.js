@@ -10,7 +10,12 @@ exports.getBerserker_Tripod_Dmg = (data) => {
   for (skill in tripod) {
     let i = 1;
     console.log(skill);
-
+    let skill_increase = {
+      increase_dmg: 0,
+      add_dmg: 0,
+      critical_dmg: 0,
+      increase_atk: 0,
+    };
     for (each_tripod in tripod[skill]) {
       switch (i) {
         case 1:
@@ -24,9 +29,12 @@ exports.getBerserker_Tripod_Dmg = (data) => {
             const increase_category = Object.keys(tier1)[0];
             console.log("tier1 : ", tier1);
             console.log("트포 레벨 : ", tier1_Level);
-            console.log(tier1_Level.slice(3), "???");
+
             const increase_coef =
               tier1[increase_category][tier1_Level.slice(3) - 1];
+
+            skill_increase[increase_category] += increase_coef;
+
             console.log(increase_coef);
             i++;
             continue;
@@ -41,6 +49,10 @@ exports.getBerserker_Tripod_Dmg = (data) => {
             continue;
           } else {
             const increase_category = Object.keys(tier2)[0];
+            const increase_coef =
+              tier2[increase_category][tier2_Level.slice(3) - 1];
+            skill_increase[increase_category] += increase_coef;
+
             console.log("tier2 : ", tier2);
             console.log("트포 레벨 : ", tier2_Level);
             console.log(tier2_Level.slice(3), "???");
@@ -58,6 +70,10 @@ exports.getBerserker_Tripod_Dmg = (data) => {
             continue;
           } else {
             const increase_category = Object.keys(tier3)[0];
+            const increase_coef =
+              tier3[increase_category][tier3_Level.slice(3) - 1];
+
+            skill_increase[increase_category] += increase_coef;
             console.log("tier3 : ", tier3);
             console.log("트포 레벨 : ", tier3_Level);
             i++;
@@ -70,6 +86,7 @@ exports.getBerserker_Tripod_Dmg = (data) => {
           continue;
       }
     }
+    console.log(skill_increase);
   }
   return atk_stat;
 };
