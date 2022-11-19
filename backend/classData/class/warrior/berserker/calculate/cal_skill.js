@@ -55,7 +55,7 @@ exports.getBerserker_Tripod_Dmg = (data) => {
 
             console.log("tier2 : ", tier2);
             console.log("트포 레벨 : ", tier2_Level);
-            console.log(tier2_Level.slice(3), "???");
+            console.log(tier2_Level.slice(3));
 
             i++;
             continue;
