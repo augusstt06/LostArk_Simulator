@@ -1,11 +1,11 @@
 var berserkerData = require("../skill.json");
-
+// > 데미지 = 공격력 _ 스킬계수 _ 피해증가 _ 추가피해 _ 치명타 피해
 // 아덴계산도 같이
 exports.getBerserker_Tripod_Dmg = (data) => {
   const atk_stat = data["Basic_Stat"]["공격력"];
   const tripod = data["Tripod"];
-  // 우선 1로 가정
-  const basic_dmg = 1;
+  // 스킬계수 : 우선 1로 가정
+  const skill_coef = 1;
 
   for (skill in tripod) {
     let i = 1;
@@ -27,20 +27,14 @@ exports.getBerserker_Tripod_Dmg = (data) => {
             continue;
           } else {
             const increase_category = Object.keys(tier1)[0];
-            console.log("tier1 : ", tier1);
-            console.log("트포 레벨 : ", tier1_Level);
-
             const increase_coef =
               tier1[increase_category][tier1_Level.slice(3) - 1];
 
             skill_increase[increase_category] += increase_coef;
-
-            console.log(increase_coef);
             i++;
             continue;
           }
         case 2:
-          console.log(each_tripod);
           const tier2 = berserkerData[skill]["tripod"]["tier2"][each_tripod];
           const tier2_Level = tripod[skill][each_tripod];
 
@@ -52,11 +46,6 @@ exports.getBerserker_Tripod_Dmg = (data) => {
             const increase_coef =
               tier2[increase_category][tier2_Level.slice(3) - 1];
             skill_increase[increase_category] += increase_coef;
-
-            console.log("tier2 : ", tier2);
-            console.log("트포 레벨 : ", tier2_Level);
-            console.log(tier2_Level.slice(3));
-
             i++;
             continue;
           }
@@ -72,10 +61,7 @@ exports.getBerserker_Tripod_Dmg = (data) => {
             const increase_category = Object.keys(tier3)[0];
             const increase_coef =
               tier3[increase_category][tier3_Level.slice(3) - 1];
-
             skill_increase[increase_category] += increase_coef;
-            console.log("tier3 : ", tier3);
-            console.log("트포 레벨 : ", tier3_Level);
             i++;
             continue;
           }
@@ -87,6 +73,16 @@ exports.getBerserker_Tripod_Dmg = (data) => {
       }
     }
     console.log(skill_increase);
+    let skillDMG = atk_stat * skill_coef;
+    for (category in skill_increase) {
+      if (skill_increase[category] === 0) {
+        continue;
+      } else {
+        console.log(skill_increase[category], "이거 곱하는거임 ");
+        skillDMG *= skill_increase[category];
+      }
+    }
+    console.log(skillDMG);
   }
   return atk_stat;
 };
