@@ -82,7 +82,7 @@ exports.getBerserker_Tripod_Dmg = (data) => {
       } else if (skill_increase[category] === 0) {
         continue;
       } else {
-        console.log(skill_increase[category], "이거 곱하는거임 ");
+        console.log(skill_increase[category], "곱해지는 계수");
         skillDMG *= skill_increase[category];
       }
     }
