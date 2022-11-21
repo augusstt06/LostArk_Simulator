@@ -68,6 +68,8 @@ exports.getBerserker_Tripod_Dmg = (data) => {
         // 위의 switch문이 완료되면 스킬 하나의 트포당 데미지 추가 항목이 계산이 완료됨
         // 따라서 switch문이 끝나는 시점에 각 항목을 종합하여 리턴
         // 최종적인 계산은 어디서?
+
+        // 각 카테고리의 계수가 0.xxx일때 계산 미스
         default:
           continue;
       }
@@ -75,7 +77,9 @@ exports.getBerserker_Tripod_Dmg = (data) => {
     console.log(skill_increase);
     let skillDMG = atk_stat * skill_coef;
     for (category in skill_increase) {
-      if (skill_increase[category] === 0) {
+      if (category === "buff") {
+        continue;
+      } else if (skill_increase[category] === 0) {
         continue;
       } else {
         console.log(skill_increase[category], "이거 곱하는거임 ");
