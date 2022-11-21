@@ -12,6 +12,7 @@ exports.getBerserker_Tripod_Dmg = (data) => {
       critical_dmg: 0,
       increase_atk: 0,
     };
+
     for (each_tripod in data[skill]) {
       switch (i) {
         case 1:
