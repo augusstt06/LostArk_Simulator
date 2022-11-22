@@ -16,26 +16,22 @@ exports.getJewel = async (url, id) => {
         `${process.env.CRAW_JEWEL_EFFECT}(${i}) > p`
       ).text();
 
-      for (j = 0; j < jewel_effect.length; j++) {
-        switch (jewel_effect[j]) {
-          case "재":
-            jewel["홍염"][jewel_effect.slice(0, j - 1)] = jewel_effect.slice(
-              j + 9,
-              j + 14
+      switch (jewel_effect.slice(jewel_effect.length - 2)) {
+        case "감소":
+          jewel["홍염"][jewel_effect.slice(0, jewel_effect.length - 19)] =
+            jewel_effect.slice(
+              jewel_effect.length - 9,
+              jewel_effect.length - 4
             );
-            break;
-          case "피":
-            jewel["멸화"][jewel_effect.slice(0, j - 1)] = jewel_effect.slice(
-              j + 3,
-              j + 8
+          continue;
+        case "증가":
+          jewel["멸화"][jewel_effect.slice(0, jewel_effect.length - 13)] =
+            jewel_effect.slice(
+              jewel_effect.length - 9,
+              jewel_effect.length - 4
             );
-            break;
-          default:
-            continue;
-        }
       }
     }
-
     console.log("Success Crawling Jewel!");
     return jewel;
   } catch (err) {
