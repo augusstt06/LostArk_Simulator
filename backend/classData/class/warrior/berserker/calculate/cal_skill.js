@@ -2,7 +2,7 @@ var berserkerData = require("../skill.json");
 // > 데미지 = 공격력 _ 스킬계수 _ 피해증가 _ 추가피해 _ 치명타 피해
 // 아덴계산도 같이
 // 트포의  총 계산 계수만 계산해서 return, 후에 최종적으로 다른 카테고리와 종합하여 데미지 계산
-exports.getBerserker_Tripod_Dmg = (data) => {
+exports.getBerserker_Tripod_Increase = (data) => {
   const tripod_coef = {};
   for (skill in data) {
     let i = 1;
