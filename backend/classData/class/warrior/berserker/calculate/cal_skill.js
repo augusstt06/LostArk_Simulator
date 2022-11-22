@@ -27,7 +27,6 @@ exports.getBerserker_Tripod_Dmg = (data) => {
 
             const increase_coef =
               tier1[increase_category][tier1_Level.slice(3) - 1];
-
             skill_increase[increase_category] += increase_coef;
             i++;
             continue;
@@ -67,7 +66,7 @@ exports.getBerserker_Tripod_Dmg = (data) => {
           }
         // 위의 switch문이 완료되면 스킬 하나의 트포당 데미지 추가 항목이 계산이 완료됨
         // 따라서 switch문이 끝나는 시점에 각 항목을 종합하여 리턴
-        // 최종적인 계산은 어디서?
+        // 최종적인 계산은 어디서? => 계산만 해주는 함수 생성
 
         // 각 카테고리의 계수가 0.xxx일때 계산 미스
         default:
