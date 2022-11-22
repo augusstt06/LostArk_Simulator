@@ -1,6 +1,6 @@
+// 기타 속성 피해 카드 추가하기
 exports.getCard_Increase = (data) => {
-  console.log(data);
-  const card_increase = {
+  let card_increase = {
     increase_dmg: 0,
   };
   for (card in data) {
@@ -24,5 +24,5 @@ exports.getCard_Increase = (data) => {
     }
   }
   console.log(card_increase);
-  return;
+  return card_increase;
 };
