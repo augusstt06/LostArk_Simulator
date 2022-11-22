@@ -1,4 +1,4 @@
-exports.getBerserker_Jewel_Dmg = (data) => {
+exports.getJewel_Increase = (data) => {
   const jewel = data["멸화"];
   const jewel_coef = {};
   for (skill in jewel) {
