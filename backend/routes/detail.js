@@ -14,7 +14,7 @@ const divideClass = (data) => {
   switch (data["Class"]) {
     case "버서커":
       const berserker = warrior.getBerserker(data);
-      console.log("버서커로 빠지기");
+      console.log("버서커");
       return berserker;
     case "디스트로이어":
       const destroyer = warrior.getDestryoter(data);
