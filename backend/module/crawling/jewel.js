@@ -26,10 +26,12 @@ exports.getJewel = async (url, id) => {
           continue;
         case "증가":
           jewel["멸화"][jewel_effect.slice(0, jewel_effect.length - 13)] =
-            jewel_effect.slice(
-              jewel_effect.length - 9,
-              jewel_effect.length - 4
-            );
+            Number(
+              jewel_effect.slice(
+                jewel_effect.length - 9,
+                jewel_effect.length - 4
+              )
+            ) / 100;
       }
     }
     console.log("Success Crawling Jewel!");
