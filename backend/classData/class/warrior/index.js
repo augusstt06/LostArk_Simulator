@@ -5,10 +5,16 @@ var engrave_cal = require("../../common_cal/cal_engrave");
 
 exports.getBerserker = (data) => {
   // > 데미지 = 공격력 _ 스킬계수 _ 피해증가 _ 추가피해 _ 치명타 피해
-  berserker_tripod_cal.getBerserker_Tripod_Increase(data["Tripod"]);
-  jewel_cal.getJewel_Increase(data["Jewel"]);
-  card_cal.getCard_Increase(data["Card"]);
-  engrave_cal.getEngrave_Increase(data["Engrave"], data["Class"]);
+  const b_tripod = berserker_tripod_cal.getBerserker_Tripod_Increase(
+    data["Tripod"]
+  );
+  const b_jewel = jewel_cal.getJewel_Increase(data["Jewel"]);
+  const b_card = card_cal.getCard_Increase(data["Card"]);
+  const b_engrave = engrave_cal.getEngrave_Increase(
+    data["Engrave"],
+    data["Class"]
+  );
+  // 스킬별로 나눠서 계수 계산
 };
 exports.getDestroyer = (data) => {
   return;
