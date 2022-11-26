@@ -1,8 +1,6 @@
 var pro_engraveData = require("../pro_engrave.json");
 var public_engraveData = require("../public_engrave.json");
 
-// 직업 필요
-
 exports.getEngrave_Increase = (data_engrave, data_class) => {
   let engrave_coef = {
     increase_dmg: 0,
