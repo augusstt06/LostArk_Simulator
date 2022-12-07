@@ -26,14 +26,7 @@ export default defineComponent({
     HeaderComponent,
     TextComponent,
   },
-  methods: {
-    // Test() {
-    //   axios
-    //     .get("/api/detail")
-    //     .then((res) => console.log(res.data))
-    //     .catch((err) => console.log(err));
-    // },
-  },
+  methods: {},
 });
 </script>
 <style>
