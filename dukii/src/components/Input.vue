@@ -6,6 +6,7 @@
         v-model="userId"
         placeholder="아이디를 입력하세요"
         min="0.00"
+        @keyup.enter="goDetailPage"
       ></b-form-input>
       <b-input-group-append>
         <b-button variant="outline-info" v-if="userId" @click="goDetailPage">
